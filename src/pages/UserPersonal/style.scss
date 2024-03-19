@@ -1,0 +1,97 @@
+.userPersonalPage {
+  width: 100%;
+  min-height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgb(221, 229, 235);
+  gap: 15px;
+  padding: 20px;
+
+  .userPersonalCard {
+    width: clamp(150px, 600px, 100%);
+    min-height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(255, 255, 255);
+    border-radius: 25px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+    padding: 10px;
+
+    .userPic {
+      width: clamp(45px, 120px, 100%);
+      height: 120px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      border: 1px solid rgb(201, 201, 201);
+      position: relative;
+      bottom: 95px;
+      background-image: url("https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA1L3Y5MzctYWV3LTEzOS5qcGc.jpg");
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+        rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+      z-index: 1000;
+    }
+
+    .userDelBtn {
+      width: 90%;
+      min-height: 30px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+
+      button {
+        width: 60px;
+        height: 30px;
+        border: none;
+        border-radius: 5px;
+        background-color: black;
+        color: white;
+        transition: 0.3s;
+
+        &:hover {
+          transition: 0.3s;
+          background-color: rgb(184, 39, 39);
+          cursor: pointer;
+        }
+      }
+    }
+
+    h5 {
+      text-transform: uppercase;
+      font-size: 25px;
+      font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    }
+    p {
+      color: rgb(92, 92, 92);
+    }
+    span {
+      font-size: 13px;
+      color: rgb(92, 92, 92);
+    }
+  }
+
+  .btnUserUpdate {
+    width: clamp(100px, 600px, 100%);
+    min-height: 40px;
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(90, 119, 142);
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+    color: white;
+    transition: 0.4s;
+
+    &:hover {
+      transition: 0.4s;
+      background-color: rgb(13, 29, 42);
+      cursor: pointer;
+    }
+  }
+}

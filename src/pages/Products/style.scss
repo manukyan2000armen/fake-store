@@ -1,0 +1,267 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+.forProducts {
+  width: 100%;
+  min-height: 700px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(221, 229, 235);
+  padding-top: 10px;
+  flex-direction: column;
+  gap: 6px;
+
+  .nkariHamar {
+    width: 95%;
+    height: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-image: url("https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 20px;
+
+    .blur {
+      width: 100%;
+      height: 100%;
+      background-color: #152e525f;
+      border-radius: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+
+      h3 {
+        font-size: 50px;
+        color: white;
+      }
+      p {
+        color: white;
+      }
+    }
+  }
+
+  .forButtons {
+    width: 95%;
+    min-height: 65px;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    border-radius: 15px;
+    gap: 5px;
+    padding: 5px;
+
+    button {
+      width: clamp(20px, 200px, 100%);
+      height: 40px;
+      border: none;
+      border-radius: 8px;
+      background-color: #254674;
+      font-size: 14px;
+      color: white;
+      text-transform: uppercase;
+      text-align: center;
+      transition: 0.4s;
+      box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+
+      &:hover {
+        transition: 0.4s;
+        background-color: #152e52;
+        cursor: pointer;
+      }
+    }
+  }
+  .forSort {
+    width: 95%;
+    min-height: 50px;
+    // background-color: rgb(162, 75, 75);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding: 5px;
+    flex-wrap: wrap;
+
+    .sortButtons {
+      width: 400px;
+      height: 40px;
+      // background-color: red;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 10px;
+
+      button {
+        width: clamp(20px, 165px, 100%);
+        min-height: 35px;
+        border-radius: 8px;
+        //   background-color: rgb(26, 26, 26);
+        font-size: clamp(12px, 13px, 100%);
+        color: rgb(0, 0, 0);
+        text-transform: uppercase;
+        text-align: center;
+        transition: 0.4s;
+      }
+    }
+
+    .addNewProductBtn {
+      button {
+        width: clamp(20px, 200px, 100%);
+        min-height: 35px;
+        border: none;
+        border-radius: 8px;
+        padding: 6px;
+        background-color: #193254;
+        color: white;
+        transition: 0.4s;
+
+        &:hover {
+          transition: 0.4s;
+          background-color: #284773;
+          box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .products {
+    width: 95%;
+    min-height: 600px;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    padding: 20px;
+    border-radius: 20px;
+    margin-top: 10px;
+
+    .productCard.selected {
+      // border: 1px solid rgb(38, 83, 117);
+      transform: scale(1.04);
+      box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+        rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    }
+
+    .productCard {
+      width: 320px;
+      height: 350px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      flex-direction: column;
+      background-color: rgb(219, 223, 228);
+      padding: 8px;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px,
+        rgba(17, 17, 26, 0.1) 0px 0px 8px;
+      transition: 0.4s;
+      gap: 3px;
+      border: 1px solid #9aabc2;
+
+      .forShoppingCart {
+        width: 95%;
+        height: 35px;
+        // background-color: red;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        button {
+          width: 40px;
+          height: 40px;
+          border: none;
+          border-radius: 50px;
+          color: rgb(68, 68, 130);
+          transition: 0.3s;
+          background-color: white;
+
+          &:hover {
+            background-color: rgb(68, 68, 130);
+            transition: 0.3s;
+            cursor: pointer;
+            color: white;
+          }
+        }
+      }
+
+      &:hover {
+        cursor: pointer;
+        transition: 0.4s;
+        transform: scale(1.03);
+      }
+
+      h4 {
+        font-family: "Montserrat", sans-serif;
+        font-size: 15px;
+        color: rgb(34, 34, 34);
+      }
+
+      p {
+        font-size: 16px;
+        color: rgb(49, 49, 49);
+      }
+
+      img {
+        object-fit: contain;
+        object-position: center;
+        width: 100%;
+        height: 65%;
+        border-radius: 12px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+    }
+  }
+
+  .footer {
+    width: 100%;
+    min-height: 50px;
+    background-color: #152e52;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    flex-wrap: wrap;
+
+    .forP {
+      width: 400px;
+      min-height: 50px;
+      // background-color: red;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: 14px;
+    }
+
+    .forIcons {
+      width: 400px;
+      height: 50px;
+      // background-color: red;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      gap: 10px;
+      font-size: 25px;
+      color: white;
+      flex-wrap: wrap;
+
+      .i {
+        transition: 0.4s;
+      }
+    }
+    .i:hover {
+      color: #718aad;
+      cursor: pointer;
+      transition: 0.4s;
+    }
+  }
+}

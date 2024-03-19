@@ -1,0 +1,51 @@
+.update {
+  width: clamp(150px, 600px, 100%);
+  min-height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 10px;
+  padding: 8px;
+
+  .forClose {
+    width: 100%;
+    min-height: 35px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    button {
+      width: 30px;
+      height: 30px;
+      border: none;
+      border-radius: 5px;
+      background-color: rgb(32, 32, 33);
+      color: white;
+      transition: 0.4s;
+
+      &:hover {
+        transition: 0.4s;
+        background-color: rgb(81, 81, 81);
+        cursor: pointer;
+      }
+    }
+  }
+  form {
+    width: clamp(100px, 500px, 100%);
+    min-height: 200px;
+    gap: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    input {
+      width: clamp(80px, 400px, 100%);
+    }
+    button {
+      width: clamp(80px, 210px, 100%);
+    }
+  }
+}

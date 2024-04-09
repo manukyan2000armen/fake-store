@@ -19,6 +19,7 @@ import {
   faPlus,
   faShoppingCart,
   faSpinner,
+  faStar,
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faFacebook,
@@ -29,6 +30,7 @@ import {
 
 import { Link, useNavigate } from "react-router-dom";
 import AddProductModal from "../../component/AddProductModal";
+import Swal from "sweetalert2";
 
 function Products() {
   const { products, categories } = useAppSelector(
@@ -130,7 +132,12 @@ function Products() {
           setLoadingProducts({ ...loadingProducts, [productId]: false });
         });
     } else {
-      console.log("This product is already in the cart");
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "This product is already in the cart",
+      });
+      // console.log("This product is already in the cart");
       setLoadingProducts({ ...loadingProducts, [productId]: false });
     }
   };
@@ -187,8 +194,9 @@ function Products() {
               }`}
             >
               <img src={elm.image} alt="Product Image" />
-              <h4>{shortenTitle(elm.title)}</h4>
+              <p className="pTitle">{shortenTitle(elm.title)}</p>
               <p>$ {elm.price}</p>
+
               <div className="forShoppingCart">
                 <button onClick={() => navigate("/product/" + elm.id)}>
                   <FontAwesomeIcon icon={faArrowRight} />

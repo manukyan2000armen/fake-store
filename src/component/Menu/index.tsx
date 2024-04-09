@@ -1,7 +1,12 @@
 import { NavLink } from "react-router-dom";
 import "./style.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
+import {
+  faBars,
+  faCartShopping,
+  faTimes,
+} from "@fortawesome/free-solid-svg-icons";
+import { useState } from "react";
 
 function Menu() {
   const navLinkStyles = ({ isActive }: any) => {
@@ -13,9 +18,21 @@ function Menu() {
       letterSpacing: isActive ? "2px" : "normal",
     };
   };
+
+  const [showMenu, setShowMenu] = useState(false);
+  const [menuIcon, setMenuIcon] = useState(faBars);
+
+  const toggleMenu = () => {
+    setShowMenu(!showMenu);
+    setMenuIcon(showMenu ? faBars : faTimes);
+  };
+
   return (
     <div className="myMenu">
-      <div className="myMenuItems">
+      <div className="burgerIcon" onClick={toggleMenu}>
+        <FontAwesomeIcon icon={menuIcon} />
+      </div>
+      <div className={`myMenuItems ${showMenu ? "show" : ""}`}>
         <ul>
           <li>
             <NavLink style={navLinkStyles} to={"/"}>

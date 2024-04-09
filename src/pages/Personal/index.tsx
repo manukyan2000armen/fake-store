@@ -77,12 +77,12 @@ function Personal() {
           <p>{product.description}</p>
           <p>$ {product.price}</p>
           <div className="forIncAndDecButtons">
-            <button onClick={incrament}>
-              <FontAwesomeIcon icon={faPlus} />
-            </button>
-            <span>{count}</span>
             <button onClick={decrament}>
               <FontAwesomeIcon icon={faMinus} />
+            </button>
+            <span>{count}</span>
+            <button onClick={incrament}>
+              <FontAwesomeIcon icon={faPlus} />
             </button>
           </div>
           <button

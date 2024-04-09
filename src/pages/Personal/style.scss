@@ -139,3 +139,150 @@
     }
   }
 }
+
+@media screen and (max-width: 450px) {
+  .personalPage {
+    min-height: 600px;
+    background: linear-gradient(
+      180deg,
+      rgb(192, 203, 221) 17%,
+      rgb(17, 28, 60) 100%
+    );
+
+    .personalItems {
+      background-color: white;
+      width: 95%;
+      height: 500px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 25px;
+      box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+        rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+      padding: 10px;
+      overflow: scroll;
+      // flex-direction: column;
+
+      .forImg {
+        width: 98%;
+        height: 40%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+        // background-color: red;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+          object-position: center;
+          border: 1px solid #849fc5;
+          border-radius: 20px;
+        }
+      }
+
+      .forTexts {
+        width: 98%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 8px;
+        // background-color: red;
+
+        .titleSpan {
+          width: clamp(20px, 300px, 100%);
+          height: 1px;
+          background-color: grey;
+        }
+
+        .forIncAndDecButtons {
+          width: 160px;
+          min-height: 50px;
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          // background-color: red;
+          gap: 12px;
+          flex-wrap: wrap;
+
+          button {
+            width: clamp(15px, 40px, 100%);
+            height: 40px;
+            border: none;
+            border-radius: 5px;
+            background-color: #152e52;
+            transition: 0.4s;
+            color: white;
+
+            &:hover {
+              transition: 0.4s;
+              background-color: #5a6f8f;
+              color: white;
+              cursor: pointer;
+            }
+          }
+        }
+
+        .buy {
+          width: clamp(20px, 380px, 100%);
+          transition: 0.4s;
+
+          &:hover {
+            background-color: #152e52;
+            transition: 0.4s;
+          }
+        }
+
+        .spanUpdate {
+          font-size: 10px;
+          color: rgb(127, 127, 127);
+        }
+        .updateBtn {
+          width: clamp(20px, 95px, 100%);
+          height: 35px;
+          border: none;
+          border-bottom-left-radius: 15px;
+          background-color: #152e52;
+          color: white;
+          transition: 0.4s;
+
+          &:hover {
+            transition: 0.4s;
+            background-color: #4f6482;
+          }
+        }
+
+        .forUpdAndDel {
+          width: clamp(100px, 400px, 100%);
+          min-height: 60px;
+          // background-color: red;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          flex-wrap: wrap;
+
+          .delBtn {
+            width: clamp(20px, 95px, 100%);
+            height: 35px;
+            border: none;
+            border-radius: 5px;
+            border-bottom-right-radius: 15px;
+
+            background-color: #152e52;
+            color: white;
+            transition: 0.4s;
+
+            &:hover {
+              transition: 0.4s;
+              background-color: rgb(192, 23, 23);
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+  }
+}

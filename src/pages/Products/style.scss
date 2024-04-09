@@ -152,13 +152,13 @@
 
     .productCard {
       width: 320px;
-      height: 350px;
+      height: 355px;
       display: flex;
       justify-content: flex-start;
       align-items: center;
       flex-direction: column;
       background-color: rgb(219, 223, 228);
-      padding: 8px;
+      padding-bottom: 10px;
       border-radius: 15px;
       overflow: hidden;
       box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px,
@@ -262,6 +262,212 @@
       color: #718aad;
       cursor: pointer;
       transition: 0.4s;
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .forProducts {
+    background: linear-gradient(
+      180deg,
+      rgb(192, 203, 221) 17%,
+      rgb(17, 28, 60) 100%
+    );
+
+    .nkariHamar {
+      width: 95%;
+      height: 300px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      background-image: url("https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      border-radius: 20px;
+
+      .blur {
+        width: 100%;
+        height: 100%;
+        background-color: #152e525f;
+        border-radius: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        h3 {
+          font-size: 18px;
+          color: white;
+        }
+        p {
+          color: white;
+        }
+      }
+    }
+
+    .forButtons {
+      display: flex;
+      justify-content: space-around;
+      height: 110px;
+
+      button {
+        width: clamp(20px, 160px, 100%);
+        height: 40px;
+        border: none;
+        border-radius: 8px;
+        background-color: #254674;
+        font-size: 14px;
+        color: white;
+        text-transform: uppercase;
+        text-align: center;
+        transition: 0.4s;
+        box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+      }
+    }
+
+    .forSort {
+      .sortButtons {
+        button {
+          width: clamp(20px, 165px, 100%);
+          min-height: 35px;
+          border-radius: 8px;
+          background-color: rgb(255, 255, 255);
+          font-size: clamp(12px, 13px, 100%);
+          color: rgb(0, 0, 0);
+          text-transform: uppercase;
+          text-align: center;
+          transition: 0.4s;
+
+          &:hover {
+            transition: 0.4s;
+            background-color: #8093af;
+            border: 1px solid rgb(255, 255, 255);
+            transform: scale(1.03);
+          }
+        }
+      }
+
+      .addNewProductBtn {
+        width: 100%;
+        height: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(255, 255, 255);
+        border-radius: 88% 12% 88% 12% / 0% 100% 0% 100%;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+          rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+        button {
+          width: clamp(20px, 200px, 100%);
+          min-height: 35px;
+          border: none;
+          border-radius: 8px;
+          padding: 6px;
+          background-color: #193254;
+          color: white;
+          transition: 0.4s;
+
+          &:hover {
+            transition: 0.4s;
+            background-color: #284773;
+            box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+    .products {
+      width: 95%;
+      min-height: 600px;
+      background-color: rgb(255, 255, 255);
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 15px;
+      border-radius: 20px;
+      margin-top: 10px;
+
+      .productCard.selected {
+        // border: 1px solid rgb(38, 83, 117);
+        transform: scale(1.04);
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+          rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+      }
+
+      .productCard {
+        width: 152px;
+        height: 270px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        // flex-direction: column;
+        background-color: rgb(219, 223, 228);
+        padding: 8px;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px,
+          rgba(17, 17, 26, 0.1) 0px 0px 8px;
+        transition: 0.4s;
+        gap: 3px;
+        border: 1px solid #9aabc2;
+
+        .forShoppingCart {
+          width: 95%;
+          height: 35px;
+          // background-color: red;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          button {
+            width: 30px;
+            height: 30px;
+            border: none;
+            border-radius: 50px;
+            color: rgb(68, 68, 130);
+            transition: 0.3s;
+            background-color: white;
+
+            &:hover {
+              background-color: rgb(68, 68, 130);
+              transition: 0.3s;
+              cursor: pointer;
+              color: white;
+            }
+          }
+        }
+
+        &:hover {
+          cursor: pointer;
+          transition: 0.4s;
+          transform: scale(1.03);
+        }
+
+        .pTitle {
+          font-family: "Montserrat", sans-serif;
+          font-size: 12px;
+          color: rgb(34, 34, 34);
+        }
+
+        p {
+          font-size: 13px;
+          color: rgb(49, 49, 49);
+        }
+
+        img {
+          object-fit: contain;
+          object-position: center;
+          width: 100%;
+          height: 50%;
+          border-radius: 12px;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+      }
     }
   }
 }

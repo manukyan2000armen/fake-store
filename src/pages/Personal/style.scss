@@ -4,7 +4,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
   //   background-color: red;
+
+  .cartAnimation {
+    display: none;
+  }
 
   .personalItems {
     width: 90%;
@@ -143,6 +148,9 @@
 @media screen and (max-width: 450px) {
   .personalPage {
     min-height: 600px;
+    flex-direction: column;
+    gap: 20px;
+
     background: linear-gradient(
       180deg,
       rgb(192, 203, 221) 17%,
@@ -179,6 +187,7 @@
           object-position: center;
           border: 1px solid #849fc5;
           border-radius: 20px;
+          animation: moveToCart;
         }
       }
 
@@ -284,5 +293,48 @@
         }
       }
     }
+
+    .cartAnimation {
+      width: 95%;
+      height: 45px;
+      background-color: rgb(246, 246, 246);
+      display: flex;
+      position: sticky;
+      bottom: 0;
+      left: 0;
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+      border-radius: 8px;
+
+      button {
+        width: 50%;
+        height: 40px;
+        border: none;
+        border-radius: 8px;
+        color: white;
+        background-color: #95aac8;
+        font-size: 22px;
+      }
+    }
   }
+}
+
+@keyframes imageMoveToCart {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: translate(0vw, 100vh) scale(0.5);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translate(0vw, 0vh) scale(0.1);
+    opacity: 0.3;
+  }
+}
+
+.forImg.animate {
+  animation: imageMoveToCart 3s ease-in-out forwards;
 }

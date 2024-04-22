@@ -15,6 +15,7 @@ import {
   faArrowDown,
   faArrowRight,
   faArrowUp,
+  faCartShopping,
   faCheck,
   faPlus,
   faShoppingCart,

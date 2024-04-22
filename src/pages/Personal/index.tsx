@@ -9,7 +9,12 @@ import {
 import { useParams } from "react-router-dom";
 import "./style.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMinus, faPencil, faPlus } from "@fortawesome/free-solid-svg-icons";
+import {
+  faCartShopping,
+  faMinus,
+  faPencil,
+  faPlus,
+} from "@fortawesome/free-solid-svg-icons";
 import UpdateProductData from "../../component/UpdateProductData";
 import Swal from "sweetalert2";
 
@@ -18,6 +23,8 @@ function Personal() {
   const dispatch = useAppDispatch();
   const [count, setCount] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const [startAnimation, setStartAnimation] = useState(false);
 
   const handleOpenModal = useCallback(() => {
     setIsModalOpen(true);
@@ -45,30 +52,35 @@ function Personal() {
     }
   }, []);
 
-  const handleAddToCartFromPersonalPage = (id: number) => {
-    dispatch(addToCart(id))
-      .then(() => {
-        Swal.fire({
-          icon: "success",
-          title: "Product added to cart!",
-          showConfirmButton: false,
-          timer: 1500,
+  const handleAddToCartWithAnimation = (id: number) => {
+    setStartAnimation(true);
+
+    setTimeout(() => {
+      setStartAnimation(false);
+
+      dispatch(addToCart(id))
+        .then(() => {
+          Swal.fire({
+            icon: "success",
+            title: "Product added to cart!",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+        })
+        .catch((error) => {
+          console.error("Error adding to cart:", error);
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Something went wrong!",
+          });
         });
-        console.log(id, "added");
-      })
-      .catch((error) => {
-        console.error("Error adding to cart:", error);
-        Swal.fire({
-          icon: "error",
-          title: "Oops...",
-          text: "Something went wrong!",
-        });
-      });
+    }, 1000);
   };
   return (
     <div className="personalPage">
-      <div className="personalItems">
-        <div className="forImg">
+      <div className={`personalItems ${startAnimation ? "animate" : ""}`}>
+        <div className={`forImg ${startAnimation ? "animate" : ""}`}>
           <img src={product.image} alt="Product Image" />
         </div>
         <div className="forTexts">
@@ -87,7 +99,7 @@ function Personal() {
           </div>
           <button
             className="btn btn-outline-secondary buy"
-            onClick={() => handleAddToCartFromPersonalPage(product.id)}
+            onClick={() => handleAddToCartWithAnimation(product.id)}
           >
             Add to Cart
           </button>
@@ -106,6 +118,11 @@ function Personal() {
         </div>
       </div>
       {isModalOpen && <UpdateProductData handleCloseModal={handleCloseModal} />}
+      <div className="cartAnimation">
+        <button>
+          <FontAwesomeIcon icon={faCartShopping} />
+        </button>
+      </div>
     </div>
   );
 }
